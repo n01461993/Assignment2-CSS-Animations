@@ -1,0 +1,323 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*--Styling for container of background-image */
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: url(/field.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo img{
+    display: block;
+    object-fit: cover;
+    width: 8%;
+    cursor: pointer;
+}
+
+.navbar{
+    width: 95%;
+    height: 12%;
+    margin: auto;    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar nav{
+    display: flex;
+    align-items: center;
+}
+
+.navbar nav li{
+    list-style: none;
+    margin-left: 1rem;
+    
+}
+
+.navbar nav li a{
+    text-decoration: none;
+    color: #ffffffbb;
+    font-size: 1.2rem;
+    padding: 0.7rem 0.6rem;
+    border: solid thick #ffffffb4;
+    border-radius: 30px;
+}
+/* Hover effect animation on navbar*/
+.navbar nav li a:hover{
+    color: rgb(255, 255, 255);
+    border: solid thick rgb(255, 255, 255);
+}
+
+.content{
+    color: #0f6127;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+h1{
+    font-size: 90px;
+    margin: 10px 0 30px;
+    line-height: 80px;
+}
+
+small{
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    margin: 10px 0 30px;
+    line-height: 60px;
+}
+
+button{
+    font-size: 1.8rem;
+    padding: 0.7rem 0.6rem;
+    color: #ffffff;
+    background: transparent;
+    border: solid thick #ffffff;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+button:hover{
+    color: black;
+    background-color: #0f6128b0;
+    transition: all 0.4s ease-in;
+}
+/*--Side-bar to store social media icons--*/
+.side-bar{
+    width: 50px;
+    height: 10vh;
+    background: #ffffff60;
+    position: absolute;
+    right: 0;
+    padding-top: 50px;
+    transform: translateY(325%);
+}
+/*--Social media icons--*/
+.fa{
+    width: 45px;
+    margin: 5px auto;
+    text-align: center;
+    bottom: 50%;
+    transform: translateY(-130%);
+    border-radius: 50%;
+    color: #ffffff;
+}
+
+.leaves img{
+    width: 450px;
+    animation: leaf 25s linear infinite;
+}
+
+.leaves{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    top: -500px;
+}
+
+.footer{
+    color: #ffffff;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 174vh;
+}
+p{
+    margin: 15px;
+    cursor: pointer;
+}
+/*--Animation to simulate leaves falling off tree--*/
+@keyframes leaf{
+    0%{
+        transform: translateY(-10vh);
+        
+    }
+    20%{
+        transform: translateX(25vh);
+    }
+    50%{
+        transform: translateX(-15vh);
+    }
+    70%{
+        transform: translateX(25vh);
+    }
+    100%{
+        transform: translateY(180vh);
+    }
+}
+/*--Delay to simulate abundance of leaves falling--*/
+.leaves img:nth-child(1){
+    animation-delay: 0s;
+}
+.leaves img:nth-child(2){
+    animation-delay: 10s;
+}
+.leaves img:nth-child(3){
+    animation-delay: 5s;
+}
+.leaves img:nth-child(4){
+    animation-delay: 15s;
+}
+/*--Media query transition for mobile screens max of 640px--*/
+@media screen and (max-width: 640px)
+{   
+    .navbar{
+        width: 95%;
+        height: 12%;
+        margin: 0 0;    
+        display: flex;
+        justify-content: space-between;
+        align-items: right;
+    }
+    .navbar nav li{
+        list-style: none;
+        margin-left: 0.4rem;
+        
+    }
+
+    .logo img{
+        display: block;
+        width: 120px;
+        cursor: pointer;
+    }
+    .navbar nav li a{
+        text-decoration: none;
+        color: #ffffffbb;
+        font-size: 0.9rem;
+        padding: 0.4rem 0.6rem;
+        border: solid thick #ffffffb4;
+        border-radius: 30px;
+    }
+    .content{
+        color: #0f6127;
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        z-index: 2;
+    }
+    h1{
+        font-size: 45px;
+        margin: 10px 0 30px;
+        line-height: 50px;
+    }
+    small{
+        color: rgb(255, 255, 255);
+        font-size: 25px;
+        margin: 10px 0 20px;
+        line-height: 35px;
+    }
+
+    button{
+        font-size: 1.2rem;
+        padding: 0.7rem 0.6rem;
+        color: #ffffff;
+        background: transparent;
+        border: solid thick #ffffff;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    .side-bar{
+        width: 50px;
+        height: 10vh;
+        background: #ffffff60;
+        position: absolute;
+        right: 0;
+        padding-top: 50px;
+        transform: translateY(600%);
+    }
+    .fa{
+        width: 45px;
+        margin: 5px auto;
+        text-align: center;
+        bottom: -20%;
+        transform: translateY(-225%);
+        border-radius: 50%;
+        color: #ffffff;
+    }
+    
+    .leaves img{
+        width: 100px;
+        animation: leaf 15s linear infinite;
+    }
+}
+/*--Media query transition for tablet screens min of 640px and max of 900px--*/
+@media screen and (max-width:900px) and (min-width: 640px){
+    .navbar nav{
+        display: flex;
+        align-items: center;
+    }
+    
+    .logo img{
+        display: block;
+        width: 120px;
+        cursor: pointer;
+    }
+    .content{
+        color: #0f6127;
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        z-index: 2;
+    }
+    h1{
+        font-size: 50px;
+        margin: 10px 0 30px;
+        line-height: 50px;
+    }
+    small{
+        color: rgb(255, 255, 255);
+        font-size: 40px;
+        margin: 10px 0 20px;
+        line-height: 40px;
+    }
+
+    button{
+        font-size: 1.1rem;
+        padding: 0.7rem 0.6rem;
+        color: #ffffff;
+        background: transparent;
+        border: solid thick #ffffff;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    .side-bar{
+        width: 50px;
+        height: 10vh;
+        background: #ffffff60;
+        position: absolute;
+        right: 0;
+        padding-top: 50px;
+        transform: translateY(325%);
+    }
+    .fa{
+        width: 45px;
+        margin: 5px auto;
+        text-align: center;
+        bottom: -20%;
+        transform: translateY(-225%);
+        border-radius: 50%;
+        color: #ffffff;
+    }
+    
+    .leaves img{
+        width: 150px;
+        animation: leaf 15s linear infinite;
+    }
+}
+
